@@ -1,0 +1,162 @@
+[
+  {
+    "id": 1,
+    "policyNumber": "POL100001",
+    "provider": "Acme Insurance Co.",
+    "coverageDetails": "Comprehensive coverage with $500 deductible",
+    "premiumPayment": 1200.50,
+    "claimRecrds": "No claims"
+  },
+  {
+    "id": 2,
+    "policyNumber": "POL100002",
+    "provider": "Global Insurers",
+    "coverageDetails": "Liability coverage with $1000 deductible",
+    "premiumPayment": 800.00,
+    "claimRecrds": "Claim filed on 2021-05-12 for $2000"
+  },
+  {
+    "id": 3,
+    "policyNumber": "POL100003",
+    "provider": "United Assurance",
+    "coverageDetails": "Collision coverage with $250 deductible",
+    "premiumPayment": 950.75,
+    "claimRecrds": "No claims"
+  },
+  {
+    "id": 4,
+    "policyNumber": "POL100004",
+    "provider": "SafeLife Insurance",
+    "coverageDetails": "Full coverage with $500 deductible",
+    "premiumPayment": 1100.00,
+    "claimRecrds": "Claim filed on 2022-02-20 for $5000"
+  },
+  {
+    "id": 5,
+    "policyNumber": "POL100005",
+    "provider": "Acme Insurance Co.",
+    "coverageDetails": "Liability coverage only",
+    "premiumPayment": 600.25,
+    "claimRecrds": "No claims"
+  },
+  {
+    "id": 6,
+    "policyNumber": "POL100006",
+    "provider": "Global Insurers",
+    "coverageDetails": "Comprehensive coverage with $1000 deductible",
+    "premiumPayment": 1300.80,
+    "claimRecrds": "Claim filed on 2020-11-15 for $3000"
+  },
+  {
+    "id": 7,
+    "policyNumber": "POL100007",
+    "provider": "United Assurance",
+    "coverageDetails": "Collision coverage with $500 deductible",
+    "premiumPayment": 980.50,
+    "claimRecrds": "No claims"
+  },
+  {
+    "id": 8,
+    "policyNumber": "POL100008",
+    "provider": "SafeLife Insurance",
+    "coverageDetails": "Full coverage with $250 deductible",
+    "premiumPayment": 1150.00,
+    "claimRecrds": "Claim filed on 2021-08-08 for $1500"
+  },
+  {
+    "id": 9,
+    "policyNumber": "POL100009",
+    "provider": "Acme Insurance Co.",
+    "coverageDetails": "Liability coverage with $500 deductible",
+    "premiumPayment": 750.30,
+    "claimRecrds": "No claims"
+  },
+  {
+    "id": 10,
+    "policyNumber": "POL100010",
+    "provider": "Global Insurers",
+    "coverageDetails": "Comprehensive coverage with $750 deductible",
+    "premiumPayment": 1250.60,
+    "claimRecrds": "Claim filed on 2019-07-22 for $2500"
+  },
+  {
+    "id": 11,
+    "policyNumber": "POL100011",
+    "provider": "United Assurance",
+    "coverageDetails": "Collision coverage with $1000 deductible",
+    "premiumPayment": 900.00,
+    "claimRecrds": "No claims"
+  },
+  {
+    "id": 12,
+    "policyNumber": "POL100012",
+    "provider": "SafeLife Insurance",
+    "coverageDetails": "Full coverage with $500 deductible",
+    "premiumPayment": 1125.40,
+    "claimRecrds": "Claim filed on 2020-03-30 for $4000"
+  },
+  {
+    "id": 13,
+    "policyNumber": "POL100013",
+    "provider": "Acme Insurance Co.",
+    "coverageDetails": "Liability coverage only",
+    "premiumPayment": 620.50,
+    "claimRecrds": "No claims"
+  },
+  {
+    "id": 14,
+    "policyNumber": "POL100014",
+    "provider": "Global Insurers",
+    "coverageDetails": "Comprehensive coverage with $500 deductible",
+    "premiumPayment": 1280.00,
+    "claimRecrds": "No claims"
+  },
+  {
+    "id": 15,
+    "policyNumber": "POL100015",
+    "provider": "United Assurance",
+    "coverageDetails": "Collision coverage with $250 deductible",
+    "premiumPayment": 970.80,
+    "claimRecrds": "Claim filed on 2018-12-05 for $3500"
+  },
+  {
+    "id": 16,
+    "policyNumber": "POL100016",
+    "provider": "SafeLife Insurance",
+    "coverageDetails": "Full coverage with $1000 deductible",
+    "premiumPayment": 1080.00,
+    "claimRecrds": "No claims"
+  },
+  {
+    "id": 17,
+    "policyNumber": "POL100017",
+    "provider": "Acme Insurance Co.",
+    "coverageDetails": "Liability coverage with $250 deductible",
+    "premiumPayment": 680.90,
+    "claimRecrds": "Claim filed on 2022-06-18 for $1800"
+  },
+  {
+    "id": 18,
+    "policyNumber": "POL100018",
+    "provider": "Global Insurers",
+    "coverageDetails": "Comprehensive coverage with $750 deductible",
+    "premiumPayment": 1265.50,
+    "claimRecrds": "No claims"
+  },
+  {
+    "id": 19,
+    "policyNumber": "POL100019",
+    "provider": "United Assurance",
+    "coverageDetails": "Collision coverage with $500 deductible",
+    "premiumPayment": 920.70,
+    "claimRecrds": "Claim filed on 2019-09-14 for $2200"
+  },
+  {
+    "id": 20,
+    "policyNumber": "POL100020",
+    "provider": "SafeLife Insurance",
+    "coverageDetails": "Full coverage with $250 deductible",
+    "premiumPayment": 1170.00,
+    "claimRecrds": "No claims"
+  }
+]

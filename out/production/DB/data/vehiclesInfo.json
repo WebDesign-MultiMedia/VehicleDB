@@ -1,0 +1,142 @@
+[
+  {
+    "id": 1,
+    "make": "Toyota",
+    "model": "Camry",
+    "year": 2015,
+    "vin": "JT1BF3EK5F1234567"
+  },
+  {
+    "id": 2,
+    "make": "Honda",
+    "model": "Accord",
+    "year": 2016,
+    "vin": "1HGCR2F5XGA234567"
+  },
+  {
+    "id": 3,
+    "make": "Ford",
+    "model": "Fusion",
+    "year": 2017,
+    "vin": "3FA6P0HD9HR345678"
+  },
+  {
+    "id": 4,
+    "make": "Chevrolet",
+    "model": "Malibu",
+    "year": 2018,
+    "vin": "1G1ZD5STXJF456789"
+  },
+  {
+    "id": 5,
+    "make": "Nissan",
+    "model": "Altima",
+    "year": 2019,
+    "vin": "1N4AL3AP6KN567890"
+  },
+  {
+    "id": 6,
+    "make": "BMW",
+    "model": "3 Series",
+    "year": 2020,
+    "vin": "WBA8E9G52LNU67890"
+  },
+  {
+    "id": 7,
+    "make": "Mercedes-Benz",
+    "model": "C-Class",
+    "year": 2021,
+    "vin": "WDDGF8AB9MF789012"
+  },
+  {
+    "id": 8,
+    "make": "Volkswagen",
+    "model": "Jetta",
+    "year": 2014,
+    "vin": "3VWD17AJ5EM890123"
+  },
+  {
+    "id": 9,
+    "make": "Audi",
+    "model": "A4",
+    "year": 2013,
+    "vin": "WAUBFAFL3DN901234"
+  },
+  {
+    "id": 10,
+    "make": "Hyundai",
+    "model": "Sonata",
+    "year": 2012,
+    "vin": "5NPEB4AC2CH012345"
+  },
+  {
+    "id": 11,
+    "make": "Kia",
+    "model": "Optima",
+    "year": 2011,
+    "vin": "KNAGM4A73B1234567"
+  },
+  {
+    "id": 12,
+    "make": "Mazda",
+    "model": "Mazda3",
+    "year": 2010,
+    "vin": "JM1BL1SF6A2123456"
+  },
+  {
+    "id": 13,
+    "make": "Subaru",
+    "model": "Impreza",
+    "year": 2009,
+    "vin": "JF1GE61629G123456"
+  },
+  {
+    "id": 14,
+    "make": "Dodge",
+    "model": "Charger",
+    "year": 2008,
+    "vin": "2B3KA43R78H123456"
+  },
+  {
+    "id": 15,
+    "make": "Jeep",
+    "model": "Wrangler",
+    "year": 2007,
+    "vin": "1J4FA24167L123456"
+  },
+  {
+    "id": 16,
+    "make": "Tesla",
+    "model": "Model S",
+    "year": 2022,
+    "vin": "5YJSA1E26MF123456"
+  },
+  {
+    "id": 17,
+    "make": "Volvo",
+    "model": "XC60",
+    "year": 2021,
+    "vin": "YV4A22RK6M1234567"
+  },
+  {
+    "id": 18,
+    "make": "Lexus",
+    "model": "RX",
+    "year": 2020,
+    "vin": "2T2BZMCA5LC123456"
+  },
+  {
+    "id": 19,
+    "make": "Jaguar",
+    "model": "F-Pace",
+    "year": 2019,
+    "vin": "SADCL2FX6KA123456"
+  },
+  {
+    "id": 20,
+    "make": "Land Rover",
+    "model": "Range Rover",
+    "year": 2018,
+    "vin": "SALGS2SV3JA123456"
+  }
+]
