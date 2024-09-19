@@ -17,8 +17,12 @@ public class VehicleRegistration {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+    @Column(name = "RegistrationRenewalDate")
     private Date registrationRenewalDate;
+    @Column(name = "FeesAndTaxesPaid")
     private double feesAndTaxesPaid;
+
+
 
 
 }

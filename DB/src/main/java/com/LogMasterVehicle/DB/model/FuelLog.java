@@ -16,29 +16,28 @@ public class FuelLog {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column
     private Integer id;
-    @Column
+    @Column(name = "Date")
     private Date date;
-    @Column
+    @Column(name = "Gallon/Liter Purchased")
     private double gallon_LiterPurchased;
-    @Column
+    @Column(name = "Price Per Gallon/Liter")
     private double pricePerGallon_Liter;
-    @Column
+    @Column(name = "Total Cost")
     private double totalCost;
-    @Column
+    @Column(name = "Fuel Type")
     private String fuelType;
-    @Column
+    @Column(name = "Gas Station Name")
     private String gasStationName;
-    @Column
+    @Column(name = "Gas Station Location")
     private String gasStationLocation;
-    @Column
+    @Column(name = "Payment Methods")
     private String paymentMethod;
-    @Column
+    @Column(name = "Odometer Reading")
     private Integer odometerReading;
-    @Column
+    @Column(name = "Trip Purpose")
     private String tripPurpose;
-    @Column
+    @Column(name = "Fuel Efficiency")
     private String fuelEfficiency;
 
 }

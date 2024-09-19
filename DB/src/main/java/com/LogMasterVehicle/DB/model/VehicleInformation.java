@@ -18,8 +18,12 @@ public class VehicleInformation {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+    @Column(name = "Make")
     private String make;
+    @Column(name = "Model")
     private String model;
+    @Column(name = "Year")
     private Integer year;
+    @Column(name = "Vin")
     private String vin;
 }
