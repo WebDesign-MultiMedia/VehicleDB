@@ -7,7 +7,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-
+@CrossOrigin(origins = "http://localhost:5174")
 @RestController
 public class VehicleInfoController {
 
@@ -16,6 +16,7 @@ public class VehicleInfoController {
 
     // GET ALL
     // localhost:8080/vehicleInformations
+
     @GetMapping("/vehicleInformations")
     public List<VehicleInformation> getAllVehicleInformation(){
         List<VehicleInformation> vehicleInformations = repo.findAll();

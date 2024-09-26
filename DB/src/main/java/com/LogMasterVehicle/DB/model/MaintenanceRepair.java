@@ -8,7 +8,11 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 
+import java.math.BigDecimal;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.time.Month;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
 
 @Entity
@@ -20,13 +24,22 @@ public class MaintenanceRepair {
 
  @Id
  @GeneratedValue(strategy = GenerationType.IDENTITY)
+
+
+//
+// public String getFormattedDate(){
+//  DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM/dd/yyyy");
+//  return date.format(formatter);
+// }
  private Integer id;
  @Column(name = "Date")
  private Date date;
  @Column(name = "Mileage")
  private Integer mileage;
  @Column(name = "MainRepair")
- private String change_Replace;
+ private String maintenance_repair;
+ @Column(name = "parts")
+ private String parts;
  @Column(name = "Vehicle Side")
  private String vehicleSide;
  @Column(name = "Service Provider")
@@ -34,15 +47,15 @@ public class MaintenanceRepair {
  @Column(name = "Service Provider Location")
 private String serviceProviderLocation;
  @Column(name = "Cost of Service")
-private double CostOfService;
+private BigDecimal costOfService;
  @Column(name = "Next Service Due")
 private Month nextServiceDue;
  @Column(name = "Receipt and/or Invoice Number")
 private Integer receipt_InvoiceNumber;
  @Column(name = "Notes or Issues")
 private String note_Issues;
-
- @ManyToOne
- @JoinColumn(name = "creator_id", nullable = false)
- private MyAppUser creator;
+//
+// @ManyToOne
+// @JoinColumn(name = "creator_id", nullable = false)
+// private MyAppUser creator;
 }

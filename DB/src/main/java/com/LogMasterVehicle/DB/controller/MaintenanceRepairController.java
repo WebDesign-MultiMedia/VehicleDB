@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 
 import java.util.List;
-
+@CrossOrigin
 @RestController
 public class MaintenanceRepairController {
 
@@ -18,6 +18,7 @@ public class MaintenanceRepairController {
 
     // GET ALL MaintenanceRepairs
     // localhost:8080/MaintenanceRepairs
+
     @GetMapping("/MaintenanceRepairs")
     public List<MaintenanceRepair> getAllMaintenanceRepair(){
         List<MaintenanceRepair> maintenanceRepairs = repo.findAll();

@@ -34,10 +34,14 @@ public class DatabaseCleanUp {
             try(Connection connection = dataSource.getConnection()){
                 Statement statement = connection.createStatement();
                 statement.executeUpdate("DROP TABLE IF EXISTS Vehicle_Information");
-                statement.executeUpdate("DROP TABLE IF EXISTS maintenance_and_repair");
+                statement.executeUpdate("DROP TABLE IF EXISTS maintenance_repair");
                 statement.executeUpdate("DROP TABLE IF EXISTS  fuel_log");
-                statement.executeUpdate("DROP TABLE IF EXISTS insurance_logs");
+                statement.executeUpdate("DROP TABLE IF EXISTS insurance_log");
                 statement.executeUpdate("DROP TABLE IF EXISTS vehicle_registraion");
+                statement.executeUpdate("DROP TABLE IF EXISTS Login");
+                statement.executeUpdate("DROP TABLE IF EXISTS Registers");
+                //statement.executeUpdate("DROP TABLE IF EXISTS ExpensesL");
+               statement.executeUpdate("DROP TABLE IF EXISTS expenses_log");
                 logger.info("Table dropped successfully");
             }catch (Exception e){
                 e.printStackTrace();

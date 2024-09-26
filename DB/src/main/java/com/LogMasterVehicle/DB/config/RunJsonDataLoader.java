@@ -23,20 +23,27 @@ public class RunJsonDataLoader implements CommandLineRunner {
     private final MaintenanceRepairRepo maintenanceRepairRepo;
     private final VehicleInformationRepo vehicleInformationRepo;
     private final VehicleRegistrationRepo vehicleRegistrationRepo;
+    private final RegisRepo regisRepo;
+    private final ExpensesRepo expensesRepo;
+//    private final ExpenseLogRepo expenseLogRepo;
     final ObjectMapper objectMapper;
-
-    public RunJsonDataLoader(FuelLogRepo fuelLogRepo, InsuranceLogRepo insuranceLogRepo, MaintenanceRepairRepo maintenanceRepairRepo, VehicleInformationRepo vehicleInformationRepo, VehicleRegistrationRepo vehicleRegistrationRepo, ObjectMapper objectMapper) {
+    //ExpenseLogRepo expenseLogRepo
+    public RunJsonDataLoader(FuelLogRepo fuelLogRepo, InsuranceLogRepo insuranceLogRepo, MaintenanceRepairRepo maintenanceRepairRepo, VehicleInformationRepo vehicleInformationRepo, VehicleRegistrationRepo vehicleRegistrationRepo, RegisRepo regisRepo, ExpensesRepo expensesRepo, ObjectMapper objectMapper) {
         this.fuelLogRepo = fuelLogRepo;
         this.insuranceLogRepo = insuranceLogRepo;
         this.maintenanceRepairRepo = maintenanceRepairRepo;
         this.vehicleInformationRepo = vehicleInformationRepo;
         this.vehicleRegistrationRepo = vehicleRegistrationRepo;
+        this.regisRepo = regisRepo;
+        this.expensesRepo = expensesRepo;
+//        this.expenseLogRepo = expenseLogRepo;
         this.objectMapper = objectMapper;
     }
 
     @Override
     public void run(String... args) throws Exception {
 
+        // FUEL LOG REPO
         if (fuelLogRepo.count() == 0) {
             try (InputStream inputStream = getClass().getResourceAsStream("/data/fuelLog.json")) {
                 List<FuelLog> fuelLogs = objectMapper.readValue(inputStream, new TypeReference<List<FuelLog>>() {});
@@ -50,6 +57,7 @@ public class RunJsonDataLoader implements CommandLineRunner {
             logger.info("Data already loaded");
         }
 
+        // INSURANCE LOG REPO
         if (insuranceLogRepo.count() == 0) {
             try (InputStream inputStream = getClass().getResourceAsStream("/data/insureInfo.json")) {
                 List<InsuranceLog> insuranceLogs = objectMapper.readValue(inputStream, new TypeReference<List<InsuranceLog>>() {});
@@ -62,7 +70,7 @@ public class RunJsonDataLoader implements CommandLineRunner {
                 logger.info("Insurance Log data already loaded");
 
             }
-
+        // MAINTENANCE REPAIR REPO
         if ( maintenanceRepairRepo.count() == 0) {
             try (InputStream inputStream = getClass().getResourceAsStream("/data/maintenanceRepair.json")) {
                 List<MaintenanceRepair> maintenanceRepairs = objectMapper.readValue(inputStream, new TypeReference<List<MaintenanceRepair>>() {});
@@ -76,7 +84,7 @@ public class RunJsonDataLoader implements CommandLineRunner {
 
         }
 
-
+        // VEHICLE INFORMATION REPO
         if (vehicleInformationRepo.count() == 0) {
             try (InputStream inputStream = getClass().getResourceAsStream("/data/vehiclesInfo.json")) {
                 List<VehicleInformation> vehicleInformations = objectMapper.readValue(inputStream, new TypeReference<List<VehicleInformation>>() {});
@@ -89,6 +97,7 @@ public class RunJsonDataLoader implements CommandLineRunner {
             logger.info("VehicleInformation data already loaded");
         }
 
+        // VEHICLE REGISTRATION REPO
         if (vehicleRegistrationRepo.count() == 0) {
             try (InputStream inputStream = getClass().getResourceAsStream("/data/vehicleRegis.json")) {
                 List<VehicleRegistration> vehicleRegistrations = objectMapper.readValue(inputStream, new TypeReference<List<VehicleRegistration>>() {});
@@ -100,6 +109,35 @@ public class RunJsonDataLoader implements CommandLineRunner {
         } else {
             logger.info("vehicleRegistrations data already loaded");
         }
+
+        //Resgitration REPO
+        if (regisRepo.count() == 0) {
+            try (InputStream inputStream = getClass().getResourceAsStream("/data/userRegis.json")) {
+                List<Registers> registers = objectMapper.readValue(inputStream, new TypeReference<List<Registers>>() {});
+                logger.info(" records loaded from JSON file: {}", regisRepo);
+                regisRepo.saveAll(registers);
+            } catch (IOException e) {
+                throw new RuntimeException("Unable to load data from vehiclesInfo.json file", e);
+            }
+        } else {
+            logger.info("vehicleRegistrations data already loaded");
+        }
+
+
+        // EXPENSE LOG REPO
+        if (expensesRepo.count() == 0) {
+            try (InputStream inputStream = getClass().getResourceAsStream("/data/expensesLog.json")) {
+                List<ExpensesLog> expensesLogs = objectMapper.readValue(inputStream, new TypeReference<List<ExpensesLog>>() {});
+                logger.info("Expenses Log loaded from JSON file: {}", expensesRepo );
+                expensesRepo.saveAll(expensesLogs);
+
+            } catch (IOException e) {
+                throw new RuntimeException("HI Unable to load data from JSON file", e);
+            }
+        } else {
+            logger.info("ExpensesLog Data already loaded");
+        }
+
     }
 }
 
