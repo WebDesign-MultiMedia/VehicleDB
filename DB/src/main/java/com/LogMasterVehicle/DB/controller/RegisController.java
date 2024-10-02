@@ -8,7 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-
+@CrossOrigin
 @RestController
 public class RegisController {
 
@@ -28,6 +28,13 @@ public class RegisController {
     @ResponseStatus(code = HttpStatus.CREATED)
     public void createNewRegister(@RequestBody Registers registers) {
         repo.save(registers);
+    }
+
+
+    @GetMapping("/Register/{id}")
+    public Registers getRegister(@PathVariable int id){
+        Registers registers = repo.findById(id).orElse(null);
+        return registers;
     }
 
 //    @PostMapping("/add")

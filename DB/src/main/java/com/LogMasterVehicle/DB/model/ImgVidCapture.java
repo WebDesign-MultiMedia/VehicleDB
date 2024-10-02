@@ -6,24 +6,14 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name = "Registers")
+@Table(name = "ImgVidCapture")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Registers {
+public class ImgVidCapture {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    @Column(name = "firstName")
-    private String firstName;
-    @Column(name = "lastName")
-    private String lastName;
-    @Column(name = "email")
-    private String email;
-    @Column(name = "password")
-    private String password;
-
-
-    }
-
-
+    private String image_Url;
+    private String url;
+}

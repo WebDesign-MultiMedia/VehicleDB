@@ -10,4 +10,5 @@ import  java.util.List;
 @Repository
 public interface VehicleRegistrationRepo extends JpaRepository<VehicleRegistration, Integer>{
     List<VehicleRegistration> findByid(Integer id);
+
 }

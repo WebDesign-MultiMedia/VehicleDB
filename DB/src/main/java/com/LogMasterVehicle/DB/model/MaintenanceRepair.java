@@ -25,35 +25,22 @@ public class MaintenanceRepair {
  @Id
  @GeneratedValue(strategy = GenerationType.IDENTITY)
 
-
-//
-// public String getFormattedDate(){
-//  DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM/dd/yyyy");
-//  return date.format(formatter);
-// }
  private Integer id;
- @Column(name = "Date")
+
  private Date date;
- @Column(name = "Mileage")
  private Integer mileage;
- @Column(name = "MainRepair")
  private String maintenance_repair;
- @Column(name = "parts")
  private String parts;
- @Column(name = "Vehicle Side")
  private String vehicleSide;
- @Column(name = "Service Provider")
  private String serviceProvider;
- @Column(name = "Service Provider Location")
-private String serviceProviderLocation;
- @Column(name = "Cost of Service")
-private BigDecimal costOfService;
- @Column(name = "Next Service Due")
-private Month nextServiceDue;
- @Column(name = "Receipt and/or Invoice Number")
-private Integer receipt_InvoiceNumber;
- @Column(name = "Notes or Issues")
-private String note_Issues;
+ private String serviceProviderLocation;
+ private double costOfService;
+ private String nextServiceDue;
+ private Integer receipt_InvoiceNumber;
+ private String note_Issues;
+
+
+
 //
 // @ManyToOne
 // @JoinColumn(name = "creator_id", nullable = false)

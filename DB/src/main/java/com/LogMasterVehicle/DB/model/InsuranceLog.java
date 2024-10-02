@@ -5,6 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.Date;
+
 @Entity
 @Table(name = "InsuranceLog")
 @Data
@@ -25,4 +27,5 @@ public class InsuranceLog {
     private double premiumPayment;
     @Column(name = "Claim Records")
     private String claimRecords;
+    private Date renewlDate;
 }

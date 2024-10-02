@@ -24,17 +24,19 @@ public class RunJsonDataLoader implements CommandLineRunner {
     private final VehicleInformationRepo vehicleInformationRepo;
     private final VehicleRegistrationRepo vehicleRegistrationRepo;
     private final RegisRepo regisRepo;
+    private final ImgVidRepo imgVidRepo;
     private final ExpensesRepo expensesRepo;
 //    private final ExpenseLogRepo expenseLogRepo;
     final ObjectMapper objectMapper;
     //ExpenseLogRepo expenseLogRepo
-    public RunJsonDataLoader(FuelLogRepo fuelLogRepo, InsuranceLogRepo insuranceLogRepo, MaintenanceRepairRepo maintenanceRepairRepo, VehicleInformationRepo vehicleInformationRepo, VehicleRegistrationRepo vehicleRegistrationRepo, RegisRepo regisRepo, ExpensesRepo expensesRepo, ObjectMapper objectMapper) {
+    public RunJsonDataLoader( ImgVidRepo imgVidRepo,FuelLogRepo fuelLogRepo, InsuranceLogRepo insuranceLogRepo, MaintenanceRepairRepo maintenanceRepairRepo, VehicleInformationRepo vehicleInformationRepo, VehicleRegistrationRepo vehicleRegistrationRepo, RegisRepo regisRepo,  ExpensesRepo expensesRepo, ObjectMapper objectMapper) {
         this.fuelLogRepo = fuelLogRepo;
         this.insuranceLogRepo = insuranceLogRepo;
         this.maintenanceRepairRepo = maintenanceRepairRepo;
         this.vehicleInformationRepo = vehicleInformationRepo;
         this.vehicleRegistrationRepo = vehicleRegistrationRepo;
         this.regisRepo = regisRepo;
+        this.imgVidRepo = imgVidRepo;
         this.expensesRepo = expensesRepo;
 //        this.expenseLogRepo = expenseLogRepo;
         this.objectMapper = objectMapper;
@@ -51,7 +53,7 @@ public class RunJsonDataLoader implements CommandLineRunner {
                 fuelLogRepo.saveAll(fuelLogs);
 
             } catch (IOException e) {
-                throw new RuntimeException("Unable to load data from JSON file", e);
+                throw new RuntimeException("Fuel Log Unable to load data from JSON file", e);
             }
         } else {
             logger.info("Data already loaded");
@@ -64,7 +66,7 @@ public class RunJsonDataLoader implements CommandLineRunner {
                 logger.info("Insurance Log loaded from JSON file: {}", insuranceLogs);
                 insuranceLogRepo.saveAll(insuranceLogs);
             } catch (IOException e) {
-                throw new RuntimeException("Unable to load data from JSON file", e);
+                throw new RuntimeException("Insurance Unable to load data from JSON file", e);
             }
         }   else{
                 logger.info("Insurance Log data already loaded");
@@ -74,10 +76,10 @@ public class RunJsonDataLoader implements CommandLineRunner {
         if ( maintenanceRepairRepo.count() == 0) {
             try (InputStream inputStream = getClass().getResourceAsStream("/data/maintenanceRepair.json")) {
                 List<MaintenanceRepair> maintenanceRepairs = objectMapper.readValue(inputStream, new TypeReference<List<MaintenanceRepair>>() {});
-                logger.info(" loaded from JSON file: {}", maintenanceRepairRepo);
+                logger.info(" loaded from JSON file: {}", maintenanceRepairs);
                 maintenanceRepairRepo.saveAll(maintenanceRepairs);
             } catch (IOException e) {
-                throw new RuntimeException("Unable to load data from JSON file", e);
+                throw new RuntimeException(" MaintenanceRepair Unable to load data from JSON file", e);
             }
         }   else{
             logger.info("MaintenanceRepair Log data already loaded");
@@ -91,7 +93,7 @@ public class RunJsonDataLoader implements CommandLineRunner {
                 logger.info(" records loaded from JSON file: {}", vehicleInformationRepo);
                 vehicleInformationRepo.saveAll(vehicleInformations);
             } catch (IOException e) {
-                throw new RuntimeException("Unable to load data from vehiclesInfo.json file", e);
+                throw new RuntimeException(" VehicleInformation Unable to load data from vehiclesInfo.json file", e);
             }
         } else {
             logger.info("VehicleInformation data already loaded");
@@ -104,7 +106,7 @@ public class RunJsonDataLoader implements CommandLineRunner {
                 logger.info(" records loaded from JSON file: {}", vehicleRegistrationRepo);
                 vehicleRegistrationRepo.saveAll(vehicleRegistrations);
             } catch (IOException e) {
-                throw new RuntimeException("Unable to load data from vehiclesInfo.json file", e);
+                throw new RuntimeException("vehicleRegistrations Unable to load data from vehiclesInfo.json file", e);
             }
         } else {
             logger.info("vehicleRegistrations data already loaded");
@@ -117,26 +119,39 @@ public class RunJsonDataLoader implements CommandLineRunner {
                 logger.info(" records loaded from JSON file: {}", regisRepo);
                 regisRepo.saveAll(registers);
             } catch (IOException e) {
-                throw new RuntimeException("Unable to load data from vehiclesInfo.json file", e);
+                throw new RuntimeException(" records loaded Unable to load data from vehiclesInfo.json file", e);
             }
         } else {
             logger.info("vehicleRegistrations data already loaded");
         }
 
+        //        this.imgVidRepo = imgVidRepo;
 
-        // EXPENSE LOG REPO
-        if (expensesRepo.count() == 0) {
-            try (InputStream inputStream = getClass().getResourceAsStream("/data/expensesLog.json")) {
-                List<ExpensesLog> expensesLogs = objectMapper.readValue(inputStream, new TypeReference<List<ExpensesLog>>() {});
-                logger.info("Expenses Log loaded from JSON file: {}", expensesRepo );
-                expensesRepo.saveAll(expensesLogs);
-
+        if (imgVidRepo.count() == 0) {
+            try (InputStream inputStream = getClass().getResourceAsStream("/data/ImgVidCaptures.json")) {
+                List<ImgVidCapture> imgVidCaptures = objectMapper.readValue(inputStream, new TypeReference<List<ImgVidCapture>>() {});
+                logger.info(" imgvid loaded from JSON file: {}", imgVidRepo);
+                imgVidRepo.saveAll(imgVidCaptures);
             } catch (IOException e) {
-                throw new RuntimeException("HI Unable to load data from JSON file", e);
+                throw new RuntimeException(" imgvid loaded Unable to load data from ImgVidCaptures.json file", e);
             }
         } else {
-            logger.info("ExpensesLog Data already loaded");
+            logger.info("imgvid data already loaded");
         }
+
+        // EXPENSE LOG REPO
+//        if (expensesRepo.count() == 0) {
+//            try (InputStream inputStream = getClass().getResourceAsStream("/data/expensesLog.json")) {
+//                List<ExpensesLog> expensesLogs = objectMapper.readValue(inputStream, new TypeReference<List<ExpensesLog>>() {});
+//                logger.info("Expenses Log loaded from JSON file: {}", expensesRepo );
+//                expensesRepo.saveAll(expensesLogs);
+//
+//            } catch (IOException e) {
+//                throw new RuntimeException("HI Unable to load data from JSON file", e);
+//            }
+//        } else {
+//            logger.info("ExpensesLog Data already loaded");
+//        }
 
     }
 }

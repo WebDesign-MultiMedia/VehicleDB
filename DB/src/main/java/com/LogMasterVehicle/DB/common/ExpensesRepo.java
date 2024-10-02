@@ -10,7 +10,7 @@ import java.util.Optional;
 @Repository
 public interface ExpensesRepo extends JpaRepository<ExpensesLog, Integer> {
     Optional<ExpensesLog> findById(Integer id);
-    List<ExpensesLog> findByEntryType(String entryType);
     List<ExpensesLog> findByName(String name);
     List<ExpensesLog> findByAmount(String amount);
+    List<ExpensesLog> findByType(String type);
 }

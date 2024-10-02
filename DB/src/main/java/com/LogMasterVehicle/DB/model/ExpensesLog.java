@@ -14,10 +14,9 @@ public class ExpensesLog {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    @Column(name = "type")
-    private String entryType;
-    @Column(name = "name")
+    private String type;
     private String name;
-    @Column(name = "amount")
     private String amount;
+
+
 }
