@@ -42,9 +42,9 @@ public class VehicleInfoController {
 
     // DELETE
     // localhost:8080/vehicleInformations/delete/Toyota
-    @DeleteMapping("/vehicleInformations/delete/{make}")
-    public void removeVehicleInformation(@PathVariable String make){
-        VehicleInformation vehicleInformation = repo.findByMake(make).get(0);
+    @DeleteMapping("/vehicleInformations/delete/{id}")
+    public void removeVehicleInformation(@PathVariable int id){
+        VehicleInformation vehicleInformation = repo.findById(id).get(0);
         repo.delete(vehicleInformation);
     }
 }

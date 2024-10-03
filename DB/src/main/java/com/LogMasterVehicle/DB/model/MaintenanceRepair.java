@@ -39,10 +39,4 @@ public class MaintenanceRepair {
  private Integer receipt_InvoiceNumber;
  private String note_Issues;
 
-
-
-//
-// @ManyToOne
-// @JoinColumn(name = "creator_id", nullable = false)
-// private MyAppUser creator;
 }

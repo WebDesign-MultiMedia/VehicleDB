@@ -14,6 +14,7 @@ public class ExpensesLog {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+    private String date;
     private String type;
     private String name;
     private String amount;

@@ -32,7 +32,7 @@ public class ExpensesController {
 //        expensesRepo.save(expensesLog);
 //    }
 
-    @PutMapping("/ExpensesLogs/add")
+    @PostMapping("/ExpensesLogs/add")
     @ResponseStatus(code = HttpStatus.CREATED)
     public void createNewExpensesLog(@RequestBody ExpensesLog expensesLog) {
         expensesRepo.save(expensesLog);

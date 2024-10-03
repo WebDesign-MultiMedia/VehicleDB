@@ -42,9 +42,9 @@ public class InsuranceLogController {
 
     // DELETE
     // localhost:8080/InsuranceLogs/add
-    @DeleteMapping("/InsuranceLogs/delete/{provider}")
-    public void removeInsuranceLog(@PathVariable String provider){
-        InsuranceLog insuranceLog = repo.findByProvider(provider).get(0);
+    @DeleteMapping("/InsuranceLogs/delete/{id}")
+    public void removeInsuranceLog(@PathVariable int id){
+        InsuranceLog insuranceLog = repo.findById(id).get();
         repo.delete(insuranceLog);
     }
 
