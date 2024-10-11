@@ -24,20 +24,18 @@ public class RunJsonDataLoader implements CommandLineRunner {
     private final VehicleInformationRepo vehicleInformationRepo;
     private final VehicleRegistrationRepo vehicleRegistrationRepo;
     private final RegisRepo regisRepo;
-    private final ImgVidRepo imgVidRepo;
     private final ExpensesRepo expensesRepo;
     private  final LoginRepo loginRepo;
 //    private final ExpenseLogRepo expenseLogRepo;
     final ObjectMapper objectMapper;
     //ExpenseLogRepo expenseLogRepo
-    public RunJsonDataLoader(ImgVidRepo imgVidRepo, FuelLogRepo fuelLogRepo, InsuranceLogRepo insuranceLogRepo, MaintenanceRepairRepo maintenanceRepairRepo, VehicleInformationRepo vehicleInformationRepo, VehicleRegistrationRepo vehicleRegistrationRepo, RegisRepo regisRepo, ExpensesRepo expensesRepo, LoginRepo loginRepo, ObjectMapper objectMapper) {
+    public RunJsonDataLoader(FuelLogRepo fuelLogRepo, InsuranceLogRepo insuranceLogRepo, MaintenanceRepairRepo maintenanceRepairRepo, VehicleInformationRepo vehicleInformationRepo, VehicleRegistrationRepo vehicleRegistrationRepo, RegisRepo regisRepo, ExpensesRepo expensesRepo, LoginRepo loginRepo, ObjectMapper objectMapper) {
         this.fuelLogRepo = fuelLogRepo;
         this.insuranceLogRepo = insuranceLogRepo;
         this.maintenanceRepairRepo = maintenanceRepairRepo;
         this.vehicleInformationRepo = vehicleInformationRepo;
         this.vehicleRegistrationRepo = vehicleRegistrationRepo;
         this.regisRepo = regisRepo;
-        this.imgVidRepo = imgVidRepo;
         this.expensesRepo = expensesRepo;
         this.loginRepo = loginRepo;
 //        this.expenseLogRepo = expenseLogRepo;
@@ -127,20 +125,6 @@ public class RunJsonDataLoader implements CommandLineRunner {
             logger.info("vehicleRegistrations data already loaded");
         }
 
-        //        this.imgVidRepo = imgVidRepo;
-
-        if (imgVidRepo.count() == 0) {
-            try (InputStream inputStream = getClass().getResourceAsStream("/data/ImgVidCaptures.json")) {
-                List<ImgVidCapture> imgVidCaptures = objectMapper.readValue(inputStream, new TypeReference<List<ImgVidCapture>>() {});
-                logger.info(" imgvid loaded from JSON file: {}", imgVidRepo);
-                imgVidRepo.saveAll(imgVidCaptures);
-            } catch (IOException e) {
-                throw new RuntimeException(" imgvid loaded Unable to load data from ImgVidCaptures.json file", e);
-            }
-        } else {
-            logger.info("imgvid data already loaded");
-        }
-
 
     //this.loginRepo = loginRepo;
         if (loginRepo.count() == 0) {
@@ -166,19 +150,6 @@ public class RunJsonDataLoader implements CommandLineRunner {
             }
         } else {
             logger.info("expensesLogs data already loaded");}
-        // EXPENSE LOG REPO
-//        if (expensesRepo.count() == 0) {
-//            try (InputStream inputStream = getClass().getResourceAsStream("/data/expensesLog.json")) {
-//                List<ExpensesLog> expensesLogs = objectMapper.readValue(inputStream, new TypeReference<List<ExpensesLog>>() {});
-//                logger.info("Expenses Log loaded from JSON file: {}", expensesRepo );
-//                expensesRepo.saveAll(expensesLogs);
-//
-//            } catch (IOException e) {
-//                throw new RuntimeException("HI Unable to load data from JSON file", e);
-//            }
-//        } else {
-//            logger.info("ExpensesLog Data already loaded");
-//        }
 
     }
 }
